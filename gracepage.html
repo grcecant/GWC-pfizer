@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{font-family: verdana;font-size:18px; color:midnightblue; background-color:peachpuff}
+    h1 {color: white; font-size: 70px; font-family:serif;background-color: white}
+    p {color: orange}
+    button {font-size: 30px; font-family:serif}
+    img {margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;}
+  </style>
+
+  <head>
+    <title>
+      GRACE CANTARELLA
+    </title>
+  </head>
+
+  <body>
+  <h1><center>
+    <p id="test">
+    GRACE CANTARELLA
+  </p>
+  </h1>
+
+  <button type="button" onclick=myFunction()>Click to change colors!</button>
+
+  <br><br>
+
+  <div style="text-align:center">
+  Enjoy this slideshow of some of my favorite places to visit! <br>
+  Use the buttons to navigate!<br>
+
+  <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&uarr;</button>
+
+  <img class="mySlides" src="https://www.keadventure.com/media/image-cache/76829b05-7274-4c5f-8a8a-388f0bc383d6/1380-495-1-690-247/1544438233-bernese-oberlandjpg.jpg" style="width:700px">
+  <img class="mySlides" src="https://content.paulreiffer.com/wp-content/uploads/2013/08/Fine-Art-Limited-Edition-Print-Wall-Corporate-Decoration-Interior-Design-Paul-Reiffer-Photographer-Photography-High-End-Landscape-Cityscape-Buy-Save-Me-San-Francisco-Bay-Bridge-California.jpg" style="width:700px">
+  <img class="mySlides" src="https://www.oxy.edu/sites/default/files/styles/banner_image/public/page/banner-images/los-angeles_main_1440x800.jpg?itok=GiOVS9-4" style="width:700px">
+
+  <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&darr;</button>
+
+</div>
+
+  <h2>
+    school:
+  </h2>
+    Stuyvesant High School<br>
+
+  <h2>interests/hobbies:</h2>
+    - violin <br>
+    - writing & journalism <br>
+    - running <br>
+    - comp sci
+  <p>
+  <button onclick=picViolin()>Violin</button>
+
+  <img id="myImage" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Old_violin.jpg" style="width:200px">
+
+  <button onclick=picRunning()>Running</button>
+  </p>
+
+  <h2>favorite animal:</h2>
+    - hedgehog<br>
+
+  <h2>favorite music genres:</h2>
+    - early 2010 pop<br>
+    - classical<br>
+    - lo-fi for studying<br>
+
+  <h2>favorite books:</h2>
+    - <em>Madame Bovary</em> by Flaubert<br>
+    - <em>The Unbearable Lightness of Being</em> by Kundera<br>
+    - <em>It's Kind of a Funny Story</em> by Vizzini<br>
+    - <em>The Metamorphosis</em> by Kafka<br><br>
+
+  <a href=https://www.youtube.com/watch?v=q625P-DBRd4>click me</a><br>
+
+  </body>
+
+  <script>
+  var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+  /*var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 1000); // Change image every 2 seconds
+}*/
+
+  function get_rand_color(){
+    var color = Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
+    while(color.length < 6) {
+        color = "0" + color;
+    }
+    return "#" + color;
+}
+
+  function myFunction() {
+    document.getElementById("test").style.color=get_rand_color();
+  }
+
+  function picViolin() {
+    document.getElementById("myImage").src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Old_violin.jpg"
+  }
+
+  function picRunning() {
+    document.getElementById("myImage").src="https://static1.squarespace.com/static/5313d797e4b08cb6881818ef/t/5b30df9d758d46fa6617f8d3/1529929632758/index.jpg"
+  }
+
+  </script>
+</html>
